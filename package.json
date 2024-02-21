@@ -1,6 +1,6 @@
 {
   "name": "@zhouhua-dev/remark-media-card",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "",
   "license": "MIT",
   "keywords": [
@@ -15,6 +15,7 @@
   "type": "module",
   "exports": "./dist/index.js",
   "files": [
+    "dist/",
     "lib/",
     "index.d.ts",
     "index.js"
