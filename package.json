@@ -1,6 +1,6 @@
 {
   "name": "@zhouhua-dev/remark-media-card",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "",
   "license": "MIT",
   "keywords": [
@@ -42,8 +42,8 @@
   },
   "scripts": {
     "clean": "rimraf dist",
-    "build": "tsc & type-coverage",
-    "format": "remark . --frail --output --quiet && prettier . --log-level warn --write && xo --fix",
+    "build": "tsc --project tsconfig.build.json & type-coverage",
+    "format": "prettier . --log-level warn --write && xo --fix",
     "prepack": "pnpm run build && pnpm run format",
     "test": "vitest",
     "test-ui": "vitest --ui.open --coverage",
@@ -68,7 +68,8 @@
   "xo": {
     "prettier": true,
     "rules": {
-      "@typescript-eslint/no-floating-promises": "off"
+      "@typescript-eslint/no-floating-promises": "off",
+      "@typescript-eslint/naming-convention": "off"
     }
   },
   "dependencies": {

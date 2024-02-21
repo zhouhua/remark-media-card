@@ -1,7 +1,7 @@
 import {describe, it, expect} from 'vitest';
 import {remark} from 'remark';
 import {queryByText} from '@testing-library/dom';
-import remarkMediaCard from './index.js';
+import remarkMediaCard from '../index.js';
 
 function formatMd(md: string) {
   return md.replace(/^\s+|\s+$/m, '');

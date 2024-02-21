@@ -1,8 +1,7 @@
 {
   "extends": "@tsconfig/node20/tsconfig.json",
   "compilerOptions": {
-    "lib": ["ES2020", "DOM"],
-    "outDir": "dist",
+    "lib": ["DOM", "ES2020"],
     "baseUrl": ".",
     "allowUnusedLabels": false,
     "allowUnreachableCode": false,
@@ -13,8 +12,9 @@
     "forceConsistentCasingInFileNames": true,
     "declaration": true,
     "sourceMap": true,
-    "resolveJsonModule": true
+    "resolveJsonModule": true,
+    "isolatedModules": true
   },
   "include": ["**/*.ts"],
-  "exclude": ["dist", "coverage", "node_modules", "**/*.test.ts"]
+  "exclude": ["dist", "coverage", "node_modules"]
 }
