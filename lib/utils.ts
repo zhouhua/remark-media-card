@@ -65,7 +65,13 @@ export function template(cardMeta: ICardMeta): string {
 
   return html`
     <div class="media-card-wrap" style="margin: 0 auto;">
-      ${url ? html`<a href="${url}" target="_blank"></a>` : ''}
+      ${url
+        ? `<a
+            href="${url}"
+            target="_blank"
+            style="text-decoration: none;"
+          >`
+        : ''}
       <div
         class="media-card"
         style="
@@ -74,7 +80,7 @@ export function template(cardMeta: ICardMeta): string {
           display:flex;
           flex-direction: column;
           margin:30px 20px;
-          padding: 15px;
+          padding: 20px;
           border-radius: 15px;
           position: relative;
           overflow: hidden;
@@ -87,18 +93,16 @@ export function template(cardMeta: ICardMeta): string {
             width: 110%;
             height: 110%;
             position: absolute;
-            top: 0;
-            left: 0;
+            top: -5%;
+            left: -5%;
             z-index: -1;
             border-radius: 15px;
             background-color: antiquewhite;
-            background-image: url(${cover});
-            background-size: cover;
-            background-position: center;
-            background-repeat: no-repeat;
             filter: blur(15px) brightness(0.6);
           "
-        ></div>
+        >
+          <img src="${cover}" alt="bg" />
+        </div>
         <div
           class="media-card-main"
           style="
@@ -146,9 +150,11 @@ export function template(cardMeta: ICardMeta): string {
                 -webkit-box-orient: vertical;
                 -webkit-line-clamp: 3;
                 display: -webkit-box;
+                font-size: 14px;
+                margin-top: 12px;
               "
               >
-                ${introduction}
+                ${introduction.replace('\n', '<br />')}
               </div>`
             : ''}
         </div>
