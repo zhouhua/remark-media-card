@@ -1,6 +1,6 @@
 {
   "name": "@zhouhua-dev/remark-media-card",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "",
   "license": "MIT",
   "keywords": [
@@ -35,6 +35,8 @@
     "remark": "^15.0.1",
     "remark-cli": "^12.0.0",
     "rimraf": "^5.0.5",
+    "ts-node": "^10.9.2",
+    "tslib": "^2.6.2",
     "tsx": "^4.7.1",
     "type-coverage": "^2.27.1",
     "typescript": "^5.3.3",
@@ -49,7 +51,8 @@
     "test": "vitest",
     "test-ui": "vitest --ui.open --coverage",
     "test-coverage": "vitest run --coverage",
-    "lint": "xo --fix"
+    "lint": "xo --fix",
+    "example": "ts-node ./example/transform.ts"
   },
   "prettier": {
     "bracketSpacing": false,
@@ -75,6 +78,10 @@
   },
   "dependencies": {
     "@triskel/tinyhtml": "^1.1.0",
+    "rehype-stringify": "^10.0.0",
+    "remark-parse": "^11.0.0",
+    "remark-rehype": "^11.1.0",
+    "unified": "^11.0.4",
     "unist-util-visit": "^5.0.0",
     "yaml": "^2.3.4"
   }

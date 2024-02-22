@@ -101,7 +101,12 @@ export function template(cardMeta: ICardMeta): string {
             filter: blur(15px) brightness(0.6);
           "
         >
-          <img src="${cover}" alt="bg" />
+          <img
+            src="${cover}"
+            alt="bg"
+            referrerpolicy="no-referrer"
+            style="width: 100%; height: 100%; object-fit: cover;"
+          />
         </div>
         <div
           class="media-card-main"
@@ -127,7 +132,12 @@ export function template(cardMeta: ICardMeta): string {
                 width: 80px;
               "
             >
-              <img src="${cover}" alt="cover" />
+              <img
+                src="${cover}"
+                alt="cover"
+                referrerpolicy="no-referrer"
+                style="width: 100%; height: 100%; object-fit: contain;"
+              />
             </div>
             <div
               style="

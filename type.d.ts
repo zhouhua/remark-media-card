@@ -2,7 +2,7 @@ declare module '@triskel/tinyhtml' {
   export default function tinyhtml(html: string): string;
 }
 
-type ICardMeta = {
+declare type ICardMeta = {
   title: string;
   cover: string;
   type: 'book' | 'movie' | 'music';

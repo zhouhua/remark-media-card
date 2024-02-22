@@ -10,6 +10,7 @@
     "coverage",
     "node_modules",
     "**/*.test.ts",
-    "vitest.config.ts"
+    "vitest.config.ts",
+    "example"
   ]
 }
