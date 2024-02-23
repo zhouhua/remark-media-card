@@ -170,6 +170,6 @@ width: 600
 
 渲染结果如下：
 
-<div class="media-card-wrap" style="margin:0 auto;"><div class="media-card" style="max-width:100%;width:320px;display:flex;flex-direction:column;margin:30px 20px;padding:20px;border-radius:15px;position:relative;overflow:hidden;text-decoration:none;"><div class="media-card-bg" style="width:110%;height:110%;position:absolute;top:-5%;left:-5%;z-index:-1;border-radius:15px;background-color:antiquewhite;filter:blur(15px) brightness(0.6);"><img src="https://p1.music.126.net/GZERNplXUdzTPkKqo2F4tA==/109951169217536854.jpg" alt="bg" referrerpolicy="no-referrer" style="width:100%;height:100%;object-fit:cover;"/></div><div class="media-card-main" style="display:flex;flex-direction:column;font-family:'Courier New', Courier, monospace;color:antiquewhite;"><div class="media-card-meta" style="display:flex;align-items:center;gap:12px;"><div class="media-card-cover" style="height:130px;width:80px;"><img src="https://p1.music.126.net/GZERNplXUdzTPkKqo2F4tA==/109951169217536854.jpg" alt="cover" referrerpolicy="no-referrer" style="width:100%;height:100%;object-fit:contain;"/></div><div style="display:flex;flex-direction:column;gap:6px;line-height:1.4;"><div><strong>Love Story</strong></div><div>歌手：Taylor Swift</div><div>专辑：<a href="https://music.163.com/#/album?id=1770438" target="_blank">《Fearless》</a></div></div></div></div></div></div>
+<div align="cneter"><img src="./screenshots/custom.png" width="677" /></div>
 
 `歌手`和`专辑`就是两个自定义字段，并且`专辑`的值是一个链接，点击链接可以跳转到专辑页面。
