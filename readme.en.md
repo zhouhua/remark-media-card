@@ -2,21 +2,22 @@
 
 [![npm version](https://img.shields.io/npm/v/%40zhouhua-dev%2Fremark-media-card?style=flat&logo=npm)](https://www.npmjs.com/package/@zhouhua-dev/remark-media-card)
 
-[英文](./readme.en.md)
+[中文](./readme.md)
 
-## 关于本插件
+## About
 
-这是一个适用于 [Remark](https://github.com/remarkjs/remark) 的插件，用于在 Markdown 中插入媒体信息卡片，比如豆瓣书籍、音乐、电影等。
+This is a plugin for [Remark](https://github.com/remarkjs/remark) that allows you to insert media information cards in Markdown, such as Douban books, music, movies, etc.
 
-本项目受 [hexo-douban-card](https://github.com/TankNee/hexo-douban-card) 的影响，参考了卡片样式的设计和实现，但没有实现豆瓣信息抓取的能力，而是开放了各种信息的输入，由使用者自由配置卡片展示内容，这些内容可以与豆瓣完全无关。
+This project was inspired by [hexo-douban-card](https://github.com/TankNee/hexo-douban-card) and references the design and implementation of the card style. However, it does not have the ability to fetch Douban information. Instead, it allows users to freely configure the content displayed on the card, which can be completely unrelated to Douban.
 
-## 安装
+
+## Installation
 
 ```bash
 npm install @zhouhua-dev/remark-media-card
 ```
 
-## 示例与效果展示
+## Examples
 
 <div align="cneter"><img src="./screenshots/book.png" width="677" /></div>
 
@@ -24,7 +25,7 @@ npm install @zhouhua-dev/remark-media-card
 ```media-card
 type: book
 url: https://book.douban.com/subject/35984787/
-title: 失明症漫记
+title: Blindness Chronicles
 cover: https://img3.doubanio.com/view/subject/s/public/s34269503.jpg
 publishDate: 2022-08-27
 author: 若泽·萨拉马戈
@@ -77,11 +78,11 @@ width: 600
 ```
 ````
 
-## 使用说明
+## Usage
 
-### Markdown 语法
+### Markdown Syntax
 
-比如在这个示例中：
+For example, in this sample:
 
 ````
 ```media-card
@@ -94,11 +95,11 @@ width: 600
 ```
 ````
 
-我们扩展了 markdown 的代码段语法，定义了 `media-card` 作为媒体信息卡片的标识符，然后在代码段中以 [yaml](https://yaml.org/) 的格式输入卡片的各种信息。yaml 中可配置的参数详情请参考：[参数说明](#参数说明)。
+We expand the markdown code block syntax, defining `media-card` as the identifier for the media information card, and then inputting the card information in [yaml](https://yaml.org/) format within the code block. For details on the parameters that can be configured in YAML, please refer to [Parameters](#Parameters)。
 
-### remark 插件
+### Remark Plugin
 
-示例：markdown 转换成 html
+Example: Convert markdown to HTML
 
 ```typescript
 import rehypeStringify from 'rehype-stringify';
@@ -108,7 +109,7 @@ import {unified} from 'unified';
 import remarkMediaCard from '@zhouhua-dev/remark-media-card';
 
 const markdown = '\
-## 音乐卡片\
+## Music Card\
 \
 ```media-card\
 type: music\
@@ -130,34 +131,27 @@ const file = await unified()
 const html = String(file);
 ```
 
-需要注意的是，因为本插件的实现方式是在 markdown 中注入了 html 片段，所以在使用时需要注意在后续的转化过程中不要过滤掉这些片段，比如在上面的示例中，remarkRehype 和 rehypeStringify 的 `allowDangerousHtml: true` 是必须的，否则会导致转换后的 html 中没有媒体卡片的 html 片段。
+Note that because this plugin injects HTML fragments into markdown, be cautious not to filter out these fragments during subsequent conversion processes. In the above example, `allowDangerousHtml: true` in both `remarkRehype` and `rehypeStringify` is required to ensure that the resulting HTML includes the HTML fragments of the media cards.
 
-> 你也可以在 `./example/transform.ts` 中找到可执行的示例代码，执行 `npm run example` 即可将 origin.md 转换成 output.html。
+> You can also find executable sample code in `./example/transform.ts`. Run `npm run example` to convert origin.md to output.html.
 
-### gatsby 插件
+### Gatsby Plugin
 
-如果要在 gatsby 中使用，请查看 [remark-media-card-gatsby](https://github.com/zhouhua/remark-media-card-gatsby) 项目。
+If you want to use this in Gatsby, please refer to the [remark-media-card-gatsby](https://github.com/zhouhua/remark-media-card-gatsby) project.
 
 
-## 参数说明
+## Parameters
 
-| 参数名 | 必需 | 类型 | 描述 |
+| Parameter | Parameter | Parameter | Description |
 | ---- | :----: | :----: | ---- |
-| type | 是 | string | 类型，目前支持 `movie`、`music`、`book` |
-| url | 否 |string | 卡片跳转的链接，比如豆瓣介绍页或音乐播放页，如果不设置，则卡片点击不会跳转 |
-| title | 是 | string | 媒体名称（书名、音乐名、电影名……） |
-| cover | 是 | string | 封面图 |
-| author | 否 | string | 仅在 `type` 为 `book` 时生效，作者名 |
-| artist | 否 | string | 仅在 `type` 为 `music` 时生效，艺术家名 |
-| director | 否 | string | 仅在 `type` 为 `movie` 时生效，导演名 |
-| actors | 否 | string | 仅在 `type` 为 `movie` 时生效，演员名 |
-| publishDate | 否 | string | 在 `type` 为 `book` 时展示为出版时间；在 `type` 为 `music` 时展示为发行时间；在 `type` 为 `movie` 时展示为上映时间 |
-| rate | 否 | string | 评分 |
-| introduction | 否 | string | 简介，可以是多行文本，但卡片中最多展示 3 行内容 |
-| width | 否 | number | 卡片宽度（px），如果不设置，卡片宽度默认充满整行 |
+| type | Yes | string | Type, currently supports `movie`, `music`, `book` |
+| url | No |string | Link the card redirects to, e.g., Douban introduction page or music playback page. If not set, clicking the card will not redirect |
+| title | Yes | string | Media name (book title, music title, movie title, etc.) |
+| cover | Yes | string | Cover image |
+| introduction | No | string | Introduction, can be multi-line text, but only the first 3 lines will be displayed on the card |
+| width | No | number | Card width in pixels, defaults to full width if not set |
 
-此外如果使用者想添加一些自定义的信息，可以直接在 yaml 中以 `key: value` 的形式添加（`value` 中支持 html 标签），卡片渲染时会把除上面表格中的参数外的所有内容都渲染出来，比如：
-
+Additionally, if users want to add some custom information, they can directly add it in YAML format as `key: value` pairs (`value` supports HTML tags). All content other than the parameters mentioned in the table above will be rendered, for example:
 
 ````
 ```media-card
@@ -170,8 +164,9 @@ width: 600
 ```
 ````
 
-渲染结果如下：
+The rendered result is shown below:
 
 <div align="cneter"><img src="./screenshots/custom.png" width="677" /></div>
 
-`歌手`和`专辑`就是两个自定义字段，并且`专辑`的值是一个链接，点击链接可以跳转到专辑页面。
+`Singer` and `Album` are two custom fields, and the value of `Album` is a link that redirects to the album page when clicked.
+
