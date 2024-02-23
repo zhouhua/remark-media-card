@@ -18,5 +18,7 @@ jobs:
         uses: actions/checkout@v4
       - name: setup pnpm
         uses: pnpm/action-setup@v3
-      - run: pnpm i
+        with: 
+          version: latest
+          run_install: true
       - run: pnpm test
