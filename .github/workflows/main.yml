@@ -1,0 +1,22 @@
+on:
+  push:
+    branches:
+    - main
+  pull_request:
+    branches:
+    - main
+jobs:
+  test:
+    name: unit test
+    runs-on: macos-latest
+    steps:
+      - name: setup node environment
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - name: fetch repo
+        uses: actions/checkout@v4
+      - name: setup pnpm
+        uses: pnpm/action-setup@v3
+      - run: pnpm i
+      - run: pnpm test
