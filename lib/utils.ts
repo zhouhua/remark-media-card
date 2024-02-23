@@ -25,7 +25,7 @@ export function template(cardMeta: ICardMeta): string {
     author,
     artist,
     director,
-    rate,
+    rating,
     title,
     publishDate,
     type,
@@ -55,8 +55,8 @@ export function template(cardMeta: ICardMeta): string {
     cardItems.push(`${langMap.publishDate[type]}：${publishDate}`);
   }
 
-  if (rate) {
-    cardItems.push(`评分：${rate}`);
+  if (rating) {
+    cardItems.push(`评分：${rating}`);
   }
 
   for (const [key, value] of Object.entries(rest)) {

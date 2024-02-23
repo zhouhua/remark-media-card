@@ -8,7 +8,7 @@ declare type ICardMeta = {
   type: 'book' | 'movie' | 'music';
   author?: string;
   publishDate?: string;
-  rate?: string;
+  rating?: string;
   url?: string;
   width?: string;
   introdution?: string;

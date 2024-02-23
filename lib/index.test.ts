@@ -111,7 +111,7 @@ describe('remark-media-card', () => {
       'author: test author',
       'artist: test artist',
       'director: test director',
-      'rate: 9.9',
+      'rating: 9.9',
       'publishDate: 2023-01-01',
       'actors: test actors',
       'introduction: test introduction',
