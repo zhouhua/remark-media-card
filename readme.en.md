@@ -2,7 +2,7 @@
 
 [![npm version](https://img.shields.io/npm/v/%40zhouhua-dev%2Fremark-media-card?style=flat&logo=npm)](https://www.npmjs.com/package/@zhouhua-dev/remark-media-card)
 
-[中文](./readme.md)
+[中文](./readme.md) | [English](./readme.en.md)
 
 ## About
 
