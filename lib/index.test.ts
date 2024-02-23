@@ -142,7 +142,7 @@ describe('remark-media-card', () => {
     expect(queryByText(bookDiv, '其他：支持')).toBeTruthy();
     expect(bookDiv.querySelector('.media-card-introduction')).toBeTruthy();
     expect(
-      bookDiv.querySelector('.media-card-cover')?.getAttribute('src'),
+      bookDiv.querySelector('.media-card-cover img')?.getAttribute('src'),
     ).toBe('./1.jpg');
     expect(bookDiv.querySelector('a')).toBeTruthy();
 
