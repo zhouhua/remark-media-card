@@ -142,7 +142,7 @@ If you want to use this in Gatsby, please refer to the [remark-media-card-gatsby
 
 ## Parameters
 
-| Parameter | Parameter | Parameter | Description |
+| Parameter | Required | Type | Description |
 | ---- | :----: | :----: | ---- |
 | type | Yes | string | Type, currently supports `movie`, `music`, `book` |
 | url | No |string | Link the card redirects to, e.g., Douban introduction page or music playback page. If not set, clicking the card will not redirect |
