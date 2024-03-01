@@ -85,6 +85,7 @@ export function template(cardMeta: ICardMeta): string {
           position: relative;
           overflow: hidden;
           text-decoration: none;
+          z-index: 0;
         "
       >
         <div
