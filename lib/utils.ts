@@ -157,7 +157,6 @@ export function template(cardMeta: ICardMeta): string {
                 style="
                 overflow: hidden;
                 text-overflow: ellipsis;
-                white-space: pre-line;
                 -webkit-box-orient: vertical;
                 -webkit-line-clamp: 3;
                 display: -webkit-box;
